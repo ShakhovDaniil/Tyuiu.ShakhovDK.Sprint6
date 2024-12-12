@@ -50,73 +50,50 @@
             // 
             groupBoxTask.Controls.Add(pictureBoxFormula);
             groupBoxTask.Controls.Add(textBoxCondition);
-            groupBoxTask.Location = new Point(5, 12);
+            resources.ApplyResources(groupBoxTask, "groupBoxTask");
             groupBoxTask.Name = "groupBoxTask";
-            groupBoxTask.Size = new Size(789, 201);
-            groupBoxTask.TabIndex = 0;
             groupBoxTask.TabStop = false;
-            groupBoxTask.Text = "Условие";
             // 
             // pictureBoxFormula
             // 
-            pictureBoxFormula.Image = (Image)resources.GetObject("pictureBoxFormula.Image");
-            pictureBoxFormula.Location = new Point(450, 22);
+            resources.ApplyResources(pictureBoxFormula, "pictureBoxFormula");
             pictureBoxFormula.Name = "pictureBoxFormula";
-            pictureBoxFormula.Size = new Size(333, 38);
-            pictureBoxFormula.TabIndex = 1;
             pictureBoxFormula.TabStop = false;
             // 
             // textBoxCondition
             // 
             textBoxCondition.BackColor = SystemColors.Menu;
             textBoxCondition.BorderStyle = BorderStyle.None;
-            textBoxCondition.Location = new Point(6, 22);
-            textBoxCondition.Multiline = true;
+            resources.ApplyResources(textBoxCondition, "textBoxCondition");
             textBoxCondition.Name = "textBoxCondition";
-            textBoxCondition.Size = new Size(406, 173);
-            textBoxCondition.TabIndex = 0;
-            textBoxCondition.Text = "Вычислить выражение по формуле";
             // 
             // groupBoxInput
             // 
             groupBoxInput.Controls.Add(textBoxTitle_Var);
             groupBoxInput.Controls.Add(textBoxVar_X);
-            groupBoxInput.Location = new Point(5, 219);
+            resources.ApplyResources(groupBoxInput, "groupBoxInput");
             groupBoxInput.Name = "groupBoxInput";
-            groupBoxInput.Size = new Size(385, 219);
-            groupBoxInput.TabIndex = 1;
             groupBoxInput.TabStop = false;
-            groupBoxInput.Text = "Ввод данных";
             // 
             // textBoxTitle_Var
             // 
             textBoxTitle_Var.BackColor = SystemColors.Menu;
             textBoxTitle_Var.BorderStyle = BorderStyle.None;
-            textBoxTitle_Var.Location = new Point(7, 85);
+            resources.ApplyResources(textBoxTitle_Var, "textBoxTitle_Var");
             textBoxTitle_Var.Name = "textBoxTitle_Var";
-            textBoxTitle_Var.Size = new Size(85, 16);
-            textBoxTitle_Var.TabIndex = 1;
-            textBoxTitle_Var.Text = "Переменная x:";
             // 
             // textBoxVar_X
             // 
-            textBoxVar_X.AccessibleDescription = "";
+            resources.ApplyResources(textBoxVar_X, "textBoxVar_X");
             textBoxVar_X.BorderStyle = BorderStyle.FixedSingle;
-            textBoxVar_X.Location = new Point(6, 107);
             textBoxVar_X.Name = "textBoxVar_X";
-            textBoxVar_X.Size = new Size(85, 23);
-            textBoxVar_X.TabIndex = 0;
             textBoxVar_X.KeyPress += textBoxVar_X_KeyPress;
             // 
             // buttonDone
             // 
             buttonDone.BackColor = SystemColors.MenuBar;
-            buttonDone.FlatStyle = FlatStyle.System;
-            buttonDone.Location = new Point(213, 159);
+            resources.ApplyResources(buttonDone, "buttonDone");
             buttonDone.Name = "buttonDone";
-            buttonDone.Size = new Size(173, 54);
-            buttonDone.TabIndex = 2;
-            buttonDone.Text = "Выполнить";
             buttonDone.UseVisualStyleBackColor = false;
             buttonDone.Click += buttonDone_Click;
             // 
@@ -126,22 +103,15 @@
             groupBoxOutput.Controls.Add(textBoxResult);
             groupBoxOutput.Controls.Add(textBoxTitle_Result);
             groupBoxOutput.Controls.Add(buttonDone);
-            groupBoxOutput.Location = new Point(396, 219);
+            resources.ApplyResources(groupBoxOutput, "groupBoxOutput");
             groupBoxOutput.Name = "groupBoxOutput";
-            groupBoxOutput.Size = new Size(392, 219);
-            groupBoxOutput.TabIndex = 3;
             groupBoxOutput.TabStop = false;
-            groupBoxOutput.Text = "Вывод данных";
             // 
             // buttonHelp
             // 
             buttonHelp.FlatAppearance.BorderColor = SystemColors.ScrollBar;
-            buttonHelp.FlatStyle = FlatStyle.Flat;
-            buttonHelp.Location = new Point(172, 182);
+            resources.ApplyResources(buttonHelp, "buttonHelp");
             buttonHelp.Name = "buttonHelp";
-            buttonHelp.Size = new Size(35, 31);
-            buttonHelp.TabIndex = 5;
-            buttonHelp.Text = "?";
             buttonHelp.UseVisualStyleBackColor = true;
             buttonHelp.Click += buttonHelp_Click;
             // 
@@ -149,32 +119,26 @@
             // 
             textBoxResult.BackColor = SystemColors.Window;
             textBoxResult.BorderStyle = BorderStyle.FixedSingle;
-            textBoxResult.Location = new Point(6, 107);
-            textBoxResult.Multiline = true;
+            resources.ApplyResources(textBoxResult, "textBoxResult");
             textBoxResult.Name = "textBoxResult";
-            textBoxResult.Size = new Size(380, 46);
-            textBoxResult.TabIndex = 4;
+            textBoxResult.ReadOnly = true;
             // 
             // textBoxTitle_Result
             // 
             textBoxTitle_Result.BackColor = SystemColors.Menu;
             textBoxTitle_Result.BorderStyle = BorderStyle.None;
-            textBoxTitle_Result.Location = new Point(6, 85);
+            resources.ApplyResources(textBoxTitle_Result, "textBoxTitle_Result");
             textBoxTitle_Result.Name = "textBoxTitle_Result";
-            textBoxTitle_Result.Size = new Size(100, 16);
-            textBoxTitle_Result.TabIndex = 3;
-            textBoxTitle_Result.Text = "Результат:";
             // 
             // FormMain
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
             Controls.Add(groupBoxOutput);
             Controls.Add(groupBoxInput);
             Controls.Add(groupBoxTask);
+            MaximizeBox = false;
             Name = "FormMain";
-            Text = "Спринт 6 | Таск 0 | Вариант 10 | Шахов Д.К";
             groupBoxTask.ResumeLayout(false);
             groupBoxTask.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxFormula).EndInit();
