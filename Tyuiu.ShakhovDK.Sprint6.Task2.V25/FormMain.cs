@@ -9,7 +9,7 @@ namespace Tyuiu.ShakhovDK.Sprint6.Task2.V25
         }
         private void buttonHelp_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Таск 1 Вариант 20 выполнил студент группы ИИПБ-24-2 Шахов Даниил Константинович", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Таск 2 Вариант 25 выполнил студент группы ИИПБ-24-2 Шахов Даниил Константинович", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         DataService ds = new DataService();
         private void buttonDone_Click(object sender, EventArgs e)
