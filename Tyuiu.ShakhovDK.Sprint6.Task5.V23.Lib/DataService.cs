@@ -14,7 +14,7 @@ namespace Tyuiu.ShakhovDK.Sprint6.Task5.V23.Lib
                 string line;
                 while ((line = reader.ReadLine()) != null)
                 {
-                    numsArray[index] = Convert.ToDouble(line);
+                    numsArray[index] = Math.Round(Convert.ToDouble(line), 3);
                     index++;
                 }
             }
