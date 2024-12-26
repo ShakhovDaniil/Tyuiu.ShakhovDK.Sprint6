@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             groupBoxTask = new GroupBox();
             textBoxCondition = new TextBox();
             groupBoxOutput = new GroupBox();
@@ -114,26 +114,26 @@
             // 
             // chartDiag
             // 
-            chartArea3.AxisX.Title = "Ось X";
-            chartArea3.AxisY.Title = "Ось Y";
-            chartArea3.Name = "ChartArea1";
-            chartDiag.ChartAreas.Add(chartArea3);
+            chartArea1.AxisX.Title = "Ось X";
+            chartArea1.AxisY.Title = "Ось Y";
+            chartArea1.Name = "ChartArea1";
+            chartDiag.ChartAreas.Add(chartArea1);
             chartDiag.Dock = DockStyle.Fill;
-            legend3.Enabled = false;
-            legend3.Name = "Legend1";
-            chartDiag.Legends.Add(legend3);
+            legend1.Enabled = false;
+            legend1.Name = "Legend1";
+            chartDiag.Legends.Add(legend1);
             chartDiag.Location = new Point(0, 0);
             chartDiag.Name = "chartDiag";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            chartDiag.Series.Add(series3);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            chartDiag.Series.Add(series1);
             chartDiag.Size = new Size(751, 343);
             chartDiag.TabIndex = 3;
-            title3.Alignment = ContentAlignment.TopCenter;
-            title3.Name = "Title1";
-            title3.Text = "График функции";
-            chartDiag.Titles.Add(title3);
+            title1.Alignment = ContentAlignment.TopCenter;
+            title1.Name = "Title1";
+            title1.Text = "График функции";
+            chartDiag.Titles.Add(title1);
             // 
             // buttonOpenFile
             // 
@@ -147,7 +147,7 @@
             buttonOpenFile.Text = "Открыть файл";
             buttonOpenFile.UseVisualStyleBackColor = false;
             buttonOpenFile.Click += buttonOpenFile_Click;
-            buttonOpenFile.MouseEnter += buttonDone_MouseEnter;
+            buttonOpenFile.MouseEnter += buttonOpenFile_MouseEnter;
             // 
             // buttonHelp
             // 
@@ -161,7 +161,7 @@
             buttonHelp.Text = "Справка";
             buttonHelp.UseVisualStyleBackColor = false;
             buttonHelp.Click += buttonHelp_Click;
-            buttonHelp.MouseEnter += buttonDone_MouseEnter;
+            buttonHelp.MouseEnter += buttonHelp_MouseEnter;
             // 
             // buttonDone
             // 

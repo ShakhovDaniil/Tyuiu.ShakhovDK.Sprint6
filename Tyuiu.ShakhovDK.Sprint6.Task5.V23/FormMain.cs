@@ -40,5 +40,15 @@ namespace Tyuiu.ShakhovDK.Sprint6.Task5.V23
             txt.StartInfo.Arguments = path;
             txt.Start();
         }
+
+        private void buttonHelp_MouseEnter(object sender, EventArgs e)
+        {
+            buttonHelp.Cursor = Cursors.Hand;
+        }
+
+        private void buttonOpenFile_MouseEnter(object sender, EventArgs e)
+        {
+            buttonOpenFile.Cursor = Cursors.Hand;
+        }
     }
 }
