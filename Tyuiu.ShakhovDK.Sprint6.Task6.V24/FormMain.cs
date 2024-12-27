@@ -10,7 +10,7 @@ namespace Tyuiu.ShakhovDK.Sprint6.Task6.V24
         }
 
         DataService ds = new DataService();
-        string openFilePath;
+        public string openFilePath;
 
         private void buttonOpenFile_Click(object sender, EventArgs e)
         {
