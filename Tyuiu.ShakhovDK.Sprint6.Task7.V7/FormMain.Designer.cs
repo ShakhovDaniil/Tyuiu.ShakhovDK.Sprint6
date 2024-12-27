@@ -32,28 +32,34 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             panelButtons = new Panel();
             groupBoxButtons = new GroupBox();
-            buttonHelp = new Button();
+            buttonSaveFile = new Button();
+            buttonAboutProgram = new Button();
             buttonDone = new Button();
             buttonOpenFile = new Button();
             groupBoxTask = new GroupBox();
             textBoxTask = new TextBox();
             panelTask = new Panel();
             panelInput = new Panel();
+            splitterIn = new Splitter();
             groupBoxInput = new GroupBox();
-            textBoxIn = new TextBox();
+            dataGridViewIn = new DataGridView();
             panelOut = new Panel();
+            splitterOut = new Splitter();
             groupBoxOutput = new GroupBox();
-            textBoxOut = new TextBox();
+            dataGridViewOut = new DataGridView();
             openFileDialogTask = new OpenFileDialog();
             toolTipInfo = new ToolTip(components);
+            saveFileDialogMatrix = new SaveFileDialog();
             panelButtons.SuspendLayout();
             groupBoxButtons.SuspendLayout();
             groupBoxTask.SuspendLayout();
             panelTask.SuspendLayout();
             panelInput.SuspendLayout();
             groupBoxInput.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewIn).BeginInit();
             panelOut.SuspendLayout();
             groupBoxOutput.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewOut).BeginInit();
             SuspendLayout();
             // 
             // panelButtons
@@ -67,7 +73,8 @@
             // 
             // groupBoxButtons
             // 
-            groupBoxButtons.Controls.Add(buttonHelp);
+            groupBoxButtons.Controls.Add(buttonSaveFile);
+            groupBoxButtons.Controls.Add(buttonAboutProgram);
             groupBoxButtons.Controls.Add(buttonDone);
             groupBoxButtons.Controls.Add(buttonOpenFile);
             groupBoxButtons.Dock = DockStyle.Fill;
@@ -77,19 +84,32 @@
             groupBoxButtons.TabIndex = 0;
             groupBoxButtons.TabStop = false;
             // 
-            // buttonHelp
+            // buttonSaveFile
             // 
-            buttonHelp.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            buttonHelp.BackColor = SystemColors.Menu;
-            buttonHelp.Image = (Image)resources.GetObject("buttonHelp.Image");
-            buttonHelp.Location = new Point(714, 22);
-            buttonHelp.Name = "buttonHelp";
-            buttonHelp.Size = new Size(64, 61);
-            buttonHelp.TabIndex = 0;
-            toolTipInfo.SetToolTip(buttonHelp, "Сведения о программе");
-            buttonHelp.UseVisualStyleBackColor = false;
-            buttonHelp.Click += buttonHelp_Click;
-            buttonHelp.MouseEnter += buttonHelp_MouseEnter;
+            buttonSaveFile.BackColor = SystemColors.Menu;
+            buttonSaveFile.Enabled = false;
+            buttonSaveFile.Image = (Image)resources.GetObject("buttonSaveFile.Image");
+            buttonSaveFile.Location = new Point(154, 22);
+            buttonSaveFile.Name = "buttonSaveFile";
+            buttonSaveFile.Size = new Size(66, 66);
+            buttonSaveFile.TabIndex = 1;
+            buttonSaveFile.UseVisualStyleBackColor = false;
+            buttonSaveFile.Click += buttonSaveFile_Click;
+            buttonSaveFile.MouseEnter += buttonSaveFile_MouseEnter;
+            // 
+            // buttonAboutProgram
+            // 
+            buttonAboutProgram.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            buttonAboutProgram.BackColor = SystemColors.Menu;
+            buttonAboutProgram.Image = (Image)resources.GetObject("buttonAboutProgram.Image");
+            buttonAboutProgram.Location = new Point(714, 22);
+            buttonAboutProgram.Name = "buttonAboutProgram";
+            buttonAboutProgram.Size = new Size(66, 66);
+            buttonAboutProgram.TabIndex = 0;
+            toolTipInfo.SetToolTip(buttonAboutProgram, "Сведения о программе");
+            buttonAboutProgram.UseVisualStyleBackColor = false;
+            buttonAboutProgram.Click += buttonAboutProgram_Click;
+            buttonAboutProgram.MouseEnter += buttonAboutProgram_MouseEnter;
             // 
             // buttonDone
             // 
@@ -99,7 +119,7 @@
             buttonDone.Image = (Image)resources.GetObject("buttonDone.Image");
             buttonDone.Location = new Point(84, 22);
             buttonDone.Name = "buttonDone";
-            buttonDone.Size = new Size(64, 61);
+            buttonDone.Size = new Size(66, 66);
             buttonDone.TabIndex = 0;
             toolTipInfo.SetToolTip(buttonDone, "Выводит первое слово каждой строки в результирующую строку");
             buttonDone.UseVisualStyleBackColor = false;
@@ -113,7 +133,7 @@
             buttonOpenFile.Image = (Image)resources.GetObject("buttonOpenFile.Image");
             buttonOpenFile.Location = new Point(12, 22);
             buttonOpenFile.Name = "buttonOpenFile";
-            buttonOpenFile.Size = new Size(66, 61);
+            buttonOpenFile.Size = new Size(66, 66);
             buttonOpenFile.TabIndex = 0;
             toolTipInfo.SetToolTip(buttonOpenFile, "Открыть файл\r\nВыберите нужный файл для обработки\r\n");
             buttonOpenFile.UseVisualStyleBackColor = false;
@@ -154,15 +174,25 @@
             // panelInput
             // 
             panelInput.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panelInput.Controls.Add(splitterIn);
             panelInput.Controls.Add(groupBoxInput);
             panelInput.Location = new Point(0, 200);
             panelInput.Name = "panelInput";
             panelInput.Size = new Size(390, 361);
             panelInput.TabIndex = 4;
             // 
+            // splitterIn
+            // 
+            splitterIn.Dock = DockStyle.Right;
+            splitterIn.Location = new Point(387, 0);
+            splitterIn.Name = "splitterIn";
+            splitterIn.Size = new Size(3, 361);
+            splitterIn.TabIndex = 1;
+            splitterIn.TabStop = false;
+            // 
             // groupBoxInput
             // 
-            groupBoxInput.Controls.Add(textBoxIn);
+            groupBoxInput.Controls.Add(dataGridViewIn);
             groupBoxInput.Dock = DockStyle.Fill;
             groupBoxInput.Location = new Point(0, 0);
             groupBoxInput.Name = "groupBoxInput";
@@ -171,27 +201,38 @@
             groupBoxInput.TabStop = false;
             groupBoxInput.Text = "Ввод";
             // 
-            // textBoxIn
+            // dataGridViewIn
             // 
-            textBoxIn.Dock = DockStyle.Fill;
-            textBoxIn.Location = new Point(3, 19);
-            textBoxIn.Multiline = true;
-            textBoxIn.Name = "textBoxIn";
-            textBoxIn.Size = new Size(384, 339);
-            textBoxIn.TabIndex = 0;
+            dataGridViewIn.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewIn.ColumnHeadersVisible = false;
+            dataGridViewIn.Dock = DockStyle.Fill;
+            dataGridViewIn.Location = new Point(3, 19);
+            dataGridViewIn.Name = "dataGridViewIn";
+            dataGridViewIn.RowHeadersVisible = false;
+            dataGridViewIn.Size = new Size(384, 339);
+            dataGridViewIn.TabIndex = 0;
             // 
             // panelOut
             // 
             panelOut.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panelOut.Controls.Add(splitterOut);
             panelOut.Controls.Add(groupBoxOutput);
             panelOut.Location = new Point(394, 200);
             panelOut.Name = "panelOut";
             panelOut.Size = new Size(390, 361);
             panelOut.TabIndex = 4;
             // 
+            // splitterOut
+            // 
+            splitterOut.Location = new Point(0, 0);
+            splitterOut.Name = "splitterOut";
+            splitterOut.Size = new Size(3, 361);
+            splitterOut.TabIndex = 1;
+            splitterOut.TabStop = false;
+            // 
             // groupBoxOutput
             // 
-            groupBoxOutput.Controls.Add(textBoxOut);
+            groupBoxOutput.Controls.Add(dataGridViewOut);
             groupBoxOutput.Dock = DockStyle.Fill;
             groupBoxOutput.Location = new Point(0, 0);
             groupBoxOutput.Name = "groupBoxOutput";
@@ -200,14 +241,16 @@
             groupBoxOutput.TabStop = false;
             groupBoxOutput.Text = "Вывод";
             // 
-            // textBoxOut
+            // dataGridViewOut
             // 
-            textBoxOut.Dock = DockStyle.Fill;
-            textBoxOut.Location = new Point(3, 19);
-            textBoxOut.Multiline = true;
-            textBoxOut.Name = "textBoxOut";
-            textBoxOut.Size = new Size(384, 339);
-            textBoxOut.TabIndex = 0;
+            dataGridViewOut.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewOut.ColumnHeadersVisible = false;
+            dataGridViewOut.Dock = DockStyle.Fill;
+            dataGridViewOut.Location = new Point(3, 19);
+            dataGridViewOut.Name = "dataGridViewOut";
+            dataGridViewOut.RowHeadersVisible = false;
+            dataGridViewOut.Size = new Size(384, 339);
+            dataGridViewOut.TabIndex = 0;
             // 
             // openFileDialogTask
             // 
@@ -215,6 +258,7 @@
             // 
             // toolTipInfo
             // 
+            toolTipInfo.IsBalloon = true;
             toolTipInfo.ToolTipIcon = ToolTipIcon.Info;
             toolTipInfo.ToolTipTitle = "Подсказка";
             // 
@@ -230,7 +274,7 @@
             MinimumSize = new Size(800, 600);
             Name = "FormMain";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Спринт 6 | Таск 6 | Вариант 24 | Шахов Д.К";
+            Text = "Спринт 6 | Таск 7 | Вариант 7 | Шахов Д.К";
             panelButtons.ResumeLayout(false);
             groupBoxButtons.ResumeLayout(false);
             groupBoxTask.ResumeLayout(false);
@@ -238,10 +282,10 @@
             panelTask.ResumeLayout(false);
             panelInput.ResumeLayout(false);
             groupBoxInput.ResumeLayout(false);
-            groupBoxInput.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewIn).EndInit();
             panelOut.ResumeLayout(false);
             groupBoxOutput.ResumeLayout(false);
-            groupBoxOutput.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewOut).EndInit();
             ResumeLayout(false);
         }
 
@@ -249,7 +293,7 @@
 
         private Panel panelButtons;
         private GroupBox groupBoxButtons;
-        private Button buttonHelp;
+        private Button buttonAboutProgram;
         private Button buttonDone;
         private Button buttonOpenFile;
         private GroupBox groupBoxTask;
@@ -258,10 +302,14 @@
         private Panel panelInput;
         private Panel panelOut;
         private GroupBox groupBoxInput;
-        private TextBox textBoxIn;
         private GroupBox groupBoxOutput;
-        private TextBox textBoxOut;
         private OpenFileDialog openFileDialogTask;
         private ToolTip toolTipInfo;
+        private Splitter splitterIn;
+        private Splitter splitterOut;
+        private DataGridView dataGridViewIn;
+        private DataGridView dataGridViewOut;
+        private SaveFileDialog saveFileDialogMatrix;
+        private Button buttonSaveFile;
     }
 }
